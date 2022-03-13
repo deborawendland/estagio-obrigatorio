@@ -9,3 +9,6 @@ config.json
 
 # Python
 **pycache**
+**dist**
+**data_analysis.egg-info**
+**build**
