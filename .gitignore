@@ -1,4 +1,8 @@
 # Data
-data\*
-data/*
+data\files\*
+data/files/*
+data\analysis\*
+data/analysis/*
 
+# Config
+config.json
