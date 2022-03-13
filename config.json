@@ -1,0 +1,23 @@
+{
+    "output_path": "data/analysis/",
+    "files": [
+        {
+            "filename": "data/base01.csv",
+            "basename": "base01",
+            "attributes": {
+                "index_col": "col01_name",
+                "target_attribute": "col02_name",
+                "selected_cols": ["col01_name", "col02_name", "col03_name"]
+            }
+        },
+        {
+            "filename": "data/base02.csv",
+            "basename": "base02",
+            "attributes": {
+                "index_col": "col01_name",
+                "target_attribute": "col02_name",
+                "selected_cols": ["col01_name", "col02_name", "col03_name"]
+            }
+        }
+    ]
+}
