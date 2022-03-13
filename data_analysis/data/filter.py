@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 
 def drop_column(base, attributes):
@@ -14,7 +13,12 @@ def map_columns(base, attributes):
     for map_col in attributes['map_cols']:
         name = map_col['name']
         print('Formating column {col}.'. format(col=name))
-        base[name] = base[name].map(map_col['value'])
+        values = map_col['value']
+        if '1' in values:
+            values = {int(k) if k.isdigit() else k: v for k, v in values.items()}
+            base[name] = base[name].map(values)
+        else: 
+            base[name] = base[name].map(values)
     return base
 
 
