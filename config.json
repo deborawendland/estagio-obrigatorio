@@ -2,7 +2,7 @@
     "output_path": "data\\analysis",
     "files": [
         {
-            "filename": "data\\base01.csv",
+            "filename": "data\\files\\base01.csv",
             "basename": "base01",
             "attributes": {
                 "index_col": "col01_name",
@@ -11,7 +11,7 @@
             }
         },
         {
-            "filename": "data\\base02.csv",
+            "filename": "data\\files\\base02.csv",
             "basename": "base02",
             "attributes": {
                 "index_col": "col01_name",
