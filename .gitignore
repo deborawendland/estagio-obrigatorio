@@ -6,3 +6,6 @@ data/analysis/*
 
 # Config
 config.json
+
+# Python
+**pycache**
