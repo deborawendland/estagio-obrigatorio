@@ -1,4 +1,15 @@
+from matplotlib.pyplot import table
 import numpy as np
+from sklearn.model_selection import train_test_split
+
+
+def split_train_test(x, y):
+    print('Spliting train-test samples.')
+    X_train, X_val, y_train, y_val = train_test_split(x, y, test_size = 0.4, random_state = 0)
+    print(f"Training set has {X_train.shape[0]} samples.")
+    print(f"Testing set has {X_val.shape[0]} samples.")
+    return X_train, X_val, y_train, y_val
+
 
 def drop_column(base, attributes):
     if len(attributes['drop_cols']) > 0:
