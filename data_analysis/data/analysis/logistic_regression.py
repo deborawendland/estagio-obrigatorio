@@ -8,10 +8,16 @@ def get_columns():
     while (True):
         col = input('Column: ')
         if col not in "0":
-            cols.append(col)
+            if col in "1":
+                cols = ['partner', 'age1st_preg','lmup2','lmup1', 'lmup3', 'lmup4', 'lmup5']
+                break
+            elif col in "2":
+                cols = ['ZIdadeM', 'YRF2_REC', 'YRF1_REC', 'RDE5', 'RDE4', 'ISD5_cat','EV5_REC', 'DR28', 'XSS1', 'DE1_REC','Wdesfecho']
+                break
+            else:
+                cols.append(col)
         else:
             break
-    cols = ['partner', 'age1st_preg','lmup2','lmup1', 'lmup3', 'lmup4', 'lmup5']
     print ('Selected columns: {columns}'.format(columns=cols))
     
     return cols
