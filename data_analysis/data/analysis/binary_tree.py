@@ -47,10 +47,10 @@ def create_decision_tree(output_path, X, y, features_label, class_label, crit, s
     create_graph(dot_path, png_path)
 
 
-def generate(table, base, output_path, crit, split):
+def generate(table, base, output_path, crit, split, target):
     print ('\nGenerating binary tree.')
 
-    X, y = table, base['scorelmup']
+    X, y = table, base[target]
     features_label = table.columns
     class_label = ['0','1']
 
