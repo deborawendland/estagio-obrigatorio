@@ -1,6 +1,8 @@
 from sklearn.feature_selection import  SelectKBest, f_regression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
+import matplotlib.pyplot as plt
+
 
 import pandas as pd
 
@@ -27,8 +29,9 @@ def verify(X_train, y_train, X_val):
 
 
 def graph(k_vs_score, output_path):
+    plt.clf()
     print('Generating graph lowest_mean_absolute_error.jpg')
-    fig = pd.Series(k_vs_score, index=range(2,16)).plot(figsize=(10,7)).get_figure()
+    fig = pd.Series(k_vs_score, index=range(2,len(k_vs_score)+2)).plot(figsize=(10,7)).get_figure()
     fig.savefig('{output}\\lowest_mean_absolute_error.jpg'.format(output=output_path))
 
 
@@ -39,10 +42,12 @@ def get_attributes(X_train, y_train, X_val):
     # mask = selector.get_support()
     # print(X_val.columns[mask]) 
 
-    #score das variaveis 
-    # print(pd.Series(selector.scores_,index=X_train.columns))
+    #score das variaveis
+    print('\nscore:')
+    print(pd.Series(selector.scores_,index=X_train.columns))
     #p-value das variaveis
-    # print(pd.Series(selector.pvalues_,index=X_train.columns))
+    print('\np-value:')
+    print(pd.Series(selector.pvalues_,index=X_train.columns))
 
     return selector
 
