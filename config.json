@@ -9,8 +9,8 @@
             "filepath": "data\\files\\base_marilia.csv",
             "basename": "base_marilia",
             "attributes": {
-                "index_col": "col01_name",
                 "target_attribute": "scorelmup",
+                "filter": "replacena",
                 "select_cols": [],
                 "drop_cols": [
                     "id","cod_entrev","age_cat","education", "local","education_cat","age_partner","Unnamed: 0"
@@ -42,6 +42,17 @@
                         }
                     }
                 ]
+            }
+        },
+        {
+            "filepath": "data\\files\\base_porto_alegre.csv",
+            "basename": "base_porto_alegre",
+            "attributes": {
+                "target_attribute": "Wdesfecho",
+                "filter": "dropna",
+                "select_cols": ["ZRACA","ZISD3A","ZIdadeM","YRF3_REC","YRF2_REC","YRF1_REC","Wdesfecho","RDE5","RDE4","ISD5_cat","ISD2_REC","IP11","IE1","GR3","EV5_REC","EV3_REC","DR28","ZABEP_REC2","XSS1","DE1_REC"],
+                "drop_cols": [],
+                "map_cols":[]
             }
         }
     ]
