@@ -5,7 +5,7 @@ data\analysis\*
 data/analysis/*
 
 # Config
-config.json
+config-1.json
 
 # Python
 **pycache**
