@@ -50,6 +50,6 @@ def get_attributes(X_train, y_train, X_val):
 def calculate(X_train, y_train, X_val, output_path):
     print ('\nCalculating lowest mean absolute error')
     k_vs_score = verify(X_train, y_train, X_val)
-    # graph(k_vs_score, output_path)
+    graph(k_vs_score, output_path)
     selector = get_attributes(X_train, y_train, X_val)
     return selector
