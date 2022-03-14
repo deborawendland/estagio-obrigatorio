@@ -17,7 +17,7 @@ def drop_column(base, attributes):
         return base.drop(columns=attributes['drop_cols'])
     elif len(attributes['select_cols']) > 0:
         print('Keeping {cols} columns'.format(cols=[attributes['select_cols']]))
-        return base.loc[:,[attributes['select_cols']]]
+        return base.loc[:,attributes['select_cols']]
         
 
 def map_columns(base, attributes):
@@ -33,11 +33,14 @@ def map_columns(base, attributes):
     return base
 
 
-def nan_values(base):
+def replace_na_values(base):
     print('Replacing nan values.')
     base.replace(np.nan, 0, inplace = True)
     return base
 
+def drop_na_values(base):
+    print('Dropping nan values.')
+    return base.dropna(how='any')
 
 def target_attribute(base, attribute):
     print('Selecting target attribute {attr}.'.format(attr=attribute))
