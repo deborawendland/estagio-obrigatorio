@@ -15,15 +15,19 @@ def main():
 
         output_path = '..\\{filepath}\\{base}'.format(filepath=config_file['output_path'], base=file['basename'])
         os.mkdir(output_path)
-        
 
         base = database.read(file['filepath'])
 
         base = filter.drop_column(base, file['attributes'])
         base = filter.map_columns(base, file['attributes'])
-        base = filter.nan_values(base)
+
+        if 'dropna' in file['attributes']['filter']:
+                base = filter.drop_na_values(base)
+        elif 'replacena' in file['attributes']['filter']:
+            base = filter.replace_na_values(base)
+
         x, y = filter.target_attribute(base, file['attributes']['target_attribute'])
-        
+
         X_train, X_val, y_train, y_val = filter.split_train_test(x, y)
         selector = mean_absolute_error.calculate(X_train, y_train, X_val, output_path)
 
@@ -31,7 +35,10 @@ def main():
         X_train, X_val, y_train, y_val = filter.split_train_test(x, y)
         logistic_regression.calculate(X_train,y_train, X_val, y_val)
 
-        binary_tree.generate(x, base, output_path, crit=config_file['binary-tree']['crit'], split=config_file['binary-tree']['split'])
+        binary_tree.generate(x, base, output_path, 
+                            crit=config_file['binary-tree']['crit'], 
+                            split=config_file['binary-tree']['split'], 
+                            target=file['attributes']['target_attribute'])
 
         cols = base.columns
 
