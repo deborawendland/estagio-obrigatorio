@@ -1,22 +1,47 @@
 {
     "output_path": "data\\analysis",
+    "binary-tree": {
+        "crit": "gini",
+        "split": "best"
+    },
     "files": [
         {
-            "filename": "data\\files\\base01.csv",
-            "basename": "base01",
+            "filepath": "data\\files\\base_marilia.csv",
+            "basename": "base_marilia",
             "attributes": {
                 "index_col": "col01_name",
-                "target_attribute": "col02_name",
-                "selected_cols": ["col01_name", "col02_name", "col03_name"]
-            }
-        },
-        {
-            "filename": "data\\files\\base02.csv",
-            "basename": "base02",
-            "attributes": {
-                "index_col": "col01_name",
-                "target_attribute": "col02_name",
-                "selected_cols": ["col01_name", "col02_name", "col03_name"]
+                "target_attribute": "scorelmup",
+                "select_cols": [],
+                "drop_cols": [
+                    "id","cod_entrev","age_cat","education", "local","education_cat","age_partner","Unnamed: 0"
+                ],
+                "map_cols":[
+                    {
+                        "name": "partner",
+                        "value": {
+                            "Married": 0,
+                            "Non-married": 1
+                        }
+                    },
+                    {
+                        "name": "scorelmup",
+                        "value": {
+                            "0": 1,
+                            "1": 1,
+                            "2": 1,
+                            "3": 1,
+                            "4": 1,
+                            "5": 1,
+                            "6": 1,
+                            "7": 1,
+                            "8": 1,
+                            "9": 1,
+                            "10": 0,
+                            "11": 0,
+                            "12": 0
+                        }
+                    }
+                ]
             }
         }
     ]
