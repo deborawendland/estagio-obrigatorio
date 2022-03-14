@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import warnings
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
 
 
 def plot_graph(base, name, output_path):
