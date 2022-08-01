@@ -1,6 +1,6 @@
 # Internship - Automation of Data Analysis Scripts
 - [Presentation](https://drive.google.com/file/d/1pGF26B-f0F45hyvzwhoQT2-WQS9UYDUj/view?usp=sharing)
-- The foundation of this work were previous works done by Guilherme Machado and Lucas Costa on their respective Undergraduate Research Projects, where scripts for the analysis of datasets envolving unplanned pregnancy were developed envolving: 
+- The foundation of this work was previous works done by Guilherme Machado and Lucas Costa on their respective Undergraduate Research Projects, where scripts for the analysis of datasets about unplanned pregnancy were developed involving
   - Logistic Regression
   - Binary Trees
   - Absolute Mean Error
